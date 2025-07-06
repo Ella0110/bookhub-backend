@@ -1,6 +1,6 @@
 import "dotenv/config";
 import mongoose from "mongoose";
-import app from "./src/app";
+import app from "./app";
 import { v2 as cloudinary } from "cloudinary";
 
 cloudinary.config({
