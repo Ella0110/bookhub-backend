@@ -118,3 +118,7 @@ export const getMe = catchAsync(
         res.status(200).json(user);
     }
 );
+
+export const testApi = (req: Request, res: Response, next: NextFunction) => {
+    res.status(200).json("pang");
+};

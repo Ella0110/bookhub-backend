@@ -27,8 +27,8 @@ jobs:
         runs-on: self-hosted
         steps:
             - name: Pull image from docker hub
-              run: docker pull ella0110/bookhub_backend:latest
+              run: sudo docker pull ella0110/bookhub_backend:latest
             - name: Delete old container
-              run: docker rm -f bookhub-backend-container
+              run: sudo docker rm -f bookhub-backend-container
             - name: Run Docker Container
-              run: docker run -d -p 5555:5555 --name bookhub-backend-container -e MONGO_PASSWORD='${{ secrets.MONGO_PASSWORD }}' ella0110/bookhub_backend
+              run: sudo docker run -d -p 5555:5555 --name bookhub-backend-container -e MONGO_PASSWORD='${{ secrets.MONGO_PASSWORD }}' ella0110/bookhub_backend

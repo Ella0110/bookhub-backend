@@ -5,11 +5,13 @@ import {
     signin,
     validateToken,
     getMe,
+    testApi,
 } from "../controllers/authController";
 import verifyToken from "../middleware/auth";
 import { registerValidate, validate } from "../shared/validator";
 
 const router = express.Router();
+router.get("/ping", testApi);
 router.post("/register", registerValidate, validate, register);
 router.post("/signin", signin);
 router.get("/validate-token", verifyToken, validateToken);
